@@ -2,6 +2,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     dependencies = {
+      "leoluz/nvim-dap-go",
       "rcarriga/nvim-dap-ui",      -- UI для дебаггера
       "nvim-neotest/nvim-nio",     -- зависимость dap-ui
       "williamboman/mason.nvim",   -- установщик пакетов
@@ -13,9 +14,11 @@ return {
 
       -- Автоустановка codelldb через mason
       require("mason-nvim-dap").setup({
-        ensure_installed = { "codelldb" },
+        ensure_installed = { "codelldb", "delve" },
         automatic_installation = true,
       })
+
+      require("dap-go").setup()
 
       -- Настройка адаптера
       local codelldb_path = vim.fn.stdpath("data") .. "/mason/bin/codelldb"

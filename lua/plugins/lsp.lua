@@ -1,6 +1,5 @@
 return {
-  {
-    "mason-org/mason.nvim",
+  { "mason-org/mason.nvim",
     opts = {
       ui = {
         icons = {
@@ -40,6 +39,9 @@ return {
       -- CLANGD
       vim.lsp.enable('clangd')
 
+      -- SQL
+      vim.lsp.enable('sqls')
+
       -- GO
       vim.lsp.config("gopls", {
         cmd = { "gopls" },
@@ -65,5 +67,8 @@ return {
       --   root_dir = vim.uv.cwd()
       -- }, { attach = true })
     end
+  },
+  {
+    'nanotee/sqls.nvim',
   },
 }

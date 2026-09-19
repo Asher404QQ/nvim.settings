@@ -72,6 +72,8 @@ return {
             ["@variable.parameter"] = { fg = "#BD2A37" },
             ["Number"] = { fg = "#C97430" },
             ["Type"] = { fg = "#E5C07B" },
+            ["@variable.member.sql"] = { fg = "#FFFFFF" },
+            ["@keyword.operator.sql"] = { fg = "#BD2A37" },
           }
         },
       })
@@ -89,6 +91,82 @@ return {
         component_separators = '|',
         section_separators = '',
       }
+    },
+  },
+  {
+    'folke/snacks.nvim',
+    -- priority = 1000,
+    -- lazy = false,
+    opts = {
+      terminal = {
+        win = {
+          style = "terminal",
+        },
+      },
+    },
+    keys = {
+      { "<leader>t1", function()
+        Snacks.terminal.toggle(nil, { count = 1 })
+      end, desc = "Toggle terminal #1", },
+      
+      { "<leader>t2", function()
+        Snacks.terminal.toggle(nil, { count = 2 })
+      end, desc = "Toggle terminal #2", },
+
+      { "<leader>t3", function()
+        Snacks.terminal.toggle(nil, { count = 3 })
+      end, desc = "Toggle terminal #3", },
+    },
+  },
+  {
+    "folke/noice.nvim",
+
+    event = "VeryLazy",
+
+    dependencies = {
+    "MunifTanjim/nui.nvim",
+    "rcarriga/nvim-notify",
+    },
+
+    opts = {
+      cmdline = {
+        enabled = true,
+      },
+
+      messages = {
+        enabled = false,
+      },
+
+      popupmenu = {
+        enabled = false,
+      },
+
+      notify = {
+        enabled = false,
+      },
+
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
+        hover = {
+          enabled = false,
+        },
+        message = {
+          enabled = false,
+        },
+      },
+
+      presets = {
+        bottom_search = false,
+        command_palette = false,
+        long_message_to_split = false,
+        inc_rename = false,
+        lsp_doc_border = false,
+      },
     },
   }
 }

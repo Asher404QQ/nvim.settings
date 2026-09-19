@@ -5,12 +5,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   callback = function()
---     vim.lsp.buf.format()
---   end,
--- })
-
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     vim.lsp.buf.format({
@@ -23,7 +17,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "go", "gomod", "gowork" },
+  pattern = { "go", "gomod", "gowork", "sql" },
   callback = function()
     vim.treesitter.start()
   end,

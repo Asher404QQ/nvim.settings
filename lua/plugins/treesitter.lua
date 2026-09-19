@@ -5,7 +5,7 @@ return {
       lazy = false,
       build = ':TSUpdate',
       config = function()
-        require('nvim-treesitter').install { "cpp", "java", "lua", "rust", "go" }
+        require('nvim-treesitter').install { "cpp", "java", "lua", "rust", "go", "sql" }
       end
     },
     {
